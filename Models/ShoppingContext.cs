@@ -15,5 +15,6 @@ namespace entity_framework_test2.Models
 
         public DbSet<CartItem> CartItems { get; set; } = null!;
         public DbSet<Product> Products{ get; set; } = null!;
+        public DbSet<Customer> Customer { get; set; } = null!;
     }
 }
