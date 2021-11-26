@@ -10,6 +10,11 @@ namespace entity_framework_test2.Models
         public Guid CartItemId { get; set; }
         public decimal Quantity { get; set; }
         public Guid ProductId { get; set; }
-        public Product Product { get; set; } 
+        public Product Product { get; set; }
+
+        // Calculated Fields
+        public string ProductName { get; set; }
+        public decimal UnitPrice { get; set; }
+        public decimal SubTotal { get; set; }
     }
 }
