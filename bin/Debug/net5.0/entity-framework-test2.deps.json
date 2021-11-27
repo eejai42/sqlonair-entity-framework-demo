@@ -6,6 +6,7 @@
   "compilationOptions": {
     "defines": [
       "TRACE",
+      "WITH_CALCULATED_FIELDS_",
       "DEBUG",
       "NET",
       "NET5_0",

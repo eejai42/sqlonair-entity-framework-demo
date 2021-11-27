@@ -20,10 +20,10 @@ namespace entity_framework_test2.Models
         public string CustomerName { get; set; }
         public string CustomerTaxRate { get; set; }
         public string ProductName { get; set; }
-        public decimal UnitPrice { get; set; }
-        public decimal SubTotal { get; set; }
-        public decimal Tax { get; set; }
-        public decimal Total { get; set; }
+        public decimal? UnitPrice { get; set; }
+        public decimal? SubTotal { get; set; }
+        public decimal? Tax { get; set; }
+        public decimal? Total { get; set; }
 #endif
     }
 }

@@ -15,8 +15,8 @@ namespace entity_framework_test2.Models
 
         // Calculated fields
 #if WITH_CALCULATED_FIELDS
-        public decimal CartTotal { get; set; }
-        public decimal CartQuantity { get; set; }
+        public decimal? CartTotal { get; set; }
+        public decimal? CartQuantity { get; set; }
 #endif
     }
 }

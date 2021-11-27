@@ -12,10 +12,36 @@ namespace entity_framework_test2.Models
             : base(options)
         {
 
-        }
+        }        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            var properties = new[]
+ {
+            modelBuilder.Entity<Customer>().Property(product => product.TaxRate)
+#if WITH_CALCULATED_FIELDS
+            ,modelBuilder.Entity<Cart>().Property(order => order.CustomerTaxRate)
+            ,modelBuilder.Entity<CartItem>().Property(detail => detail.CustomerTaxRate)
+#endif
+        };
+
+            properties.ToList().ForEach(property =>
+            {
+                property.HasPrecision(18, 4);
+            });
+
+            var regDecimal = new[]
+            {
+                modelBuilder.Entity<Product>().Property(product => product.UnitPrice),
+                modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.Quantity)
+            };
+
+            regDecimal.ToList().ForEach(property =>
+            {
+                property.HasPrecision(18, 2);
+            });
+
+
             base.OnModelCreating(modelBuilder);
 
             var net15 = new PaymentArrangement()
@@ -37,19 +63,25 @@ namespace entity_framework_test2.Models
             {
                 Name = "EJ",
                 PaymentArrangementId = net15.PaymentArrangementId,
-                PhoneNumber = "555-123-4567"
+                PhoneNumber = "555-123-4567",
+                PaymentTerm = 15,
+                TaxRate = 0.055m
             };
             var bob = new Customer()
             {
                 Name = "Bob",
                 PaymentArrangementId = net30.PaymentArrangementId,
-                PhoneNumber = "808-808-8088"
+                PhoneNumber = "808-808-8088",
+                PaymentTerm = 30,
+                TaxRate = 0.0385m
             };
             var mary = new Customer()
             {
                 Name = "Mary",
                 PaymentArrangementId = net15.PaymentArrangementId,
-                PhoneNumber = "123-456-7890"
+                PhoneNumber = "123-456-7890",
+                PaymentTerm = 15,
+                TaxRate = 0.025m
             };
             modelBuilder.Entity<Customer>().HasData(new Models.Customer[]
             {
@@ -73,9 +105,9 @@ namespace entity_framework_test2.Models
                 productA, productB
             });
 
-            var ejsCart = new Cart() { CustomerId = ej.CustomerId };
-            var bobsCart = new Cart() { CustomerId = bob.CustomerId };
-            var marysCart = new Cart() { CustomerId = mary.CustomerId };
+            var ejsCart = new Cart() { CustomerId = ej.CustomerId, CartNumber = 1000 };
+            var bobsCart = new Cart() { CustomerId = bob.CustomerId, CartNumber = 1001 };
+            var marysCart = new Cart() { CustomerId = mary.CustomerId, CartNumber = 1002 };
 
             modelBuilder.Entity<Cart>().HasData(new Models.Cart[]
             {

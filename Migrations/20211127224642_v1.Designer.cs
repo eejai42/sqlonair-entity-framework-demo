@@ -10,7 +10,7 @@ using entity_framework_test2.Models;
 namespace entity_framework_test2.Migrations
 {
     [DbContext(typeof(ShoppingContext))]
-    [Migration("20211127213248_v1")]
+    [Migration("20211127224642_v1")]
     partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,24 +45,24 @@ namespace entity_framework_test2.Migrations
                     b.HasData(
                         new
                         {
-                            CartId = new Guid("41973484-2eda-403a-8f59-84afb6c66a85"),
-                            CartDate = new DateTime(2021, 11, 27, 21, 32, 47, 527, DateTimeKind.Utc).AddTicks(1069),
-                            CartNumber = 0,
-                            CustomerId = new Guid("5f08a8db-13b7-4c64-9d9b-9f9bb8589381")
+                            CartId = new Guid("45484328-602e-4a62-b357-389df4ca57ff"),
+                            CartDate = new DateTime(2021, 11, 27, 22, 46, 41, 718, DateTimeKind.Utc).AddTicks(2783),
+                            CartNumber = 1000,
+                            CustomerId = new Guid("8d592aa9-c729-4789-86c9-0c00b77884e8")
                         },
                         new
                         {
-                            CartId = new Guid("03b6cb94-5a14-4cda-8a8e-7f7cb508f429"),
-                            CartDate = new DateTime(2021, 11, 27, 21, 32, 47, 527, DateTimeKind.Utc).AddTicks(3087),
-                            CartNumber = 0,
-                            CustomerId = new Guid("18026425-03c2-42b6-9080-c7df1afed350")
+                            CartId = new Guid("50946c2c-83cf-4c9c-bccc-7cc9c6d87f41"),
+                            CartDate = new DateTime(2021, 11, 27, 22, 46, 41, 718, DateTimeKind.Utc).AddTicks(5736),
+                            CartNumber = 1001,
+                            CustomerId = new Guid("e199899f-3c5c-487e-975a-5f3773e6547a")
                         },
                         new
                         {
-                            CartId = new Guid("b97a18ea-b650-4c12-bee5-2039c33204f4"),
-                            CartDate = new DateTime(2021, 11, 27, 21, 32, 47, 527, DateTimeKind.Utc).AddTicks(3095),
-                            CartNumber = 0,
-                            CustomerId = new Guid("d3953001-b917-4484-8dae-ca9b60610e30")
+                            CartId = new Guid("798fd6d7-d4b9-41f3-92ac-94f91a94d90e"),
+                            CartDate = new DateTime(2021, 11, 27, 22, 46, 41, 718, DateTimeKind.Utc).AddTicks(5745),
+                            CartNumber = 1002,
+                            CustomerId = new Guid("58e0f5cd-7de8-4c0b-8094-50d915e83b6e")
                         });
                 });
 
@@ -79,6 +79,7 @@ namespace entity_framework_test2.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Quantity")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("CartItemId");
@@ -92,30 +93,30 @@ namespace entity_framework_test2.Migrations
                     b.HasData(
                         new
                         {
-                            CartItemId = new Guid("34b80451-2750-4906-bc36-e3612d97ae37"),
-                            CartId = new Guid("41973484-2eda-403a-8f59-84afb6c66a85"),
-                            ProductId = new Guid("35eeb65b-b9c4-4c44-a30f-d78cf5933726"),
+                            CartItemId = new Guid("03f1c51c-4106-4ad0-b6d3-31d9fd493ce1"),
+                            CartId = new Guid("45484328-602e-4a62-b357-389df4ca57ff"),
+                            ProductId = new Guid("463e8e24-61bf-4342-a64b-51338455ca83"),
                             Quantity = 1m
                         },
                         new
                         {
-                            CartItemId = new Guid("1d5e8dcc-1431-430e-abd4-291fd79c9c5d"),
-                            CartId = new Guid("41973484-2eda-403a-8f59-84afb6c66a85"),
-                            ProductId = new Guid("c0abc7ec-4932-48ce-9697-76d0bac9ced8"),
+                            CartItemId = new Guid("804acd71-bf7e-4ca1-9b35-606a31069ca7"),
+                            CartId = new Guid("45484328-602e-4a62-b357-389df4ca57ff"),
+                            ProductId = new Guid("2e987de0-b832-4c8b-9da9-ceb01da2b4e1"),
                             Quantity = 25m
                         },
                         new
                         {
-                            CartItemId = new Guid("bb59e508-608b-4728-86ef-e4adccbd33e7"),
-                            CartId = new Guid("03b6cb94-5a14-4cda-8a8e-7f7cb508f429"),
-                            ProductId = new Guid("35eeb65b-b9c4-4c44-a30f-d78cf5933726"),
+                            CartItemId = new Guid("aed01c16-5720-4996-8c83-adbf2b7efb3e"),
+                            CartId = new Guid("50946c2c-83cf-4c9c-bccc-7cc9c6d87f41"),
+                            ProductId = new Guid("463e8e24-61bf-4342-a64b-51338455ca83"),
                             Quantity = 125m
                         },
                         new
                         {
-                            CartItemId = new Guid("c3453ef4-4d9f-4b06-8c9a-85c0a9818574"),
-                            CartId = new Guid("b97a18ea-b650-4c12-bee5-2039c33204f4"),
-                            ProductId = new Guid("c0abc7ec-4932-48ce-9697-76d0bac9ced8"),
+                            CartItemId = new Guid("5d515c3b-e9fd-416c-8823-8427a89778ab"),
+                            CartId = new Guid("798fd6d7-d4b9-41f3-92ac-94f91a94d90e"),
+                            ProductId = new Guid("2e987de0-b832-4c8b-9da9-ceb01da2b4e1"),
                             Quantity = 6m
                         });
                 });
@@ -132,14 +133,15 @@ namespace entity_framework_test2.Migrations
                     b.Property<Guid?>("PaymentArrangementId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("PaymentTerm")
+                    b.Property<int?>("PaymentTerm")
                         .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("TaxRate")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<decimal?>("TaxRate")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
 
                     b.HasKey("CustomerId");
 
@@ -150,30 +152,30 @@ namespace entity_framework_test2.Migrations
                     b.HasData(
                         new
                         {
-                            CustomerId = new Guid("5f08a8db-13b7-4c64-9d9b-9f9bb8589381"),
+                            CustomerId = new Guid("8d592aa9-c729-4789-86c9-0c00b77884e8"),
                             Name = "EJ",
-                            PaymentArrangementId = new Guid("0da423a4-9a3e-429a-a5f4-40b1520304cf"),
-                            PaymentTerm = 0,
+                            PaymentArrangementId = new Guid("67dcb6bc-a404-43e4-a870-f468c54935c3"),
+                            PaymentTerm = 15,
                             PhoneNumber = "555-123-4567",
-                            TaxRate = 0m
+                            TaxRate = 0.055m
                         },
                         new
                         {
-                            CustomerId = new Guid("18026425-03c2-42b6-9080-c7df1afed350"),
+                            CustomerId = new Guid("e199899f-3c5c-487e-975a-5f3773e6547a"),
                             Name = "Bob",
-                            PaymentArrangementId = new Guid("28d814bf-3c4a-46e8-9b32-abba46ff179a"),
-                            PaymentTerm = 0,
+                            PaymentArrangementId = new Guid("727a9833-6de1-4c2d-85e0-b6744eee251f"),
+                            PaymentTerm = 30,
                             PhoneNumber = "808-808-8088",
-                            TaxRate = 0m
+                            TaxRate = 0.0385m
                         },
                         new
                         {
-                            CustomerId = new Guid("d3953001-b917-4484-8dae-ca9b60610e30"),
+                            CustomerId = new Guid("58e0f5cd-7de8-4c0b-8094-50d915e83b6e"),
                             Name = "Mary",
-                            PaymentArrangementId = new Guid("0da423a4-9a3e-429a-a5f4-40b1520304cf"),
-                            PaymentTerm = 0,
+                            PaymentArrangementId = new Guid("67dcb6bc-a404-43e4-a870-f468c54935c3"),
+                            PaymentTerm = 15,
                             PhoneNumber = "123-456-7890",
-                            TaxRate = 0m
+                            TaxRate = 0.025m
                         });
                 });
 
@@ -193,12 +195,12 @@ namespace entity_framework_test2.Migrations
                     b.HasData(
                         new
                         {
-                            PaymentArrangementId = new Guid("0da423a4-9a3e-429a-a5f4-40b1520304cf"),
+                            PaymentArrangementId = new Guid("67dcb6bc-a404-43e4-a870-f468c54935c3"),
                             Term = 15
                         },
                         new
                         {
-                            PaymentArrangementId = new Guid("28d814bf-3c4a-46e8-9b32-abba46ff179a"),
+                            PaymentArrangementId = new Guid("727a9833-6de1-4c2d-85e0-b6744eee251f"),
                             Term = 30
                         });
                 });
@@ -213,6 +215,7 @@ namespace entity_framework_test2.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("UnitPrice")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("ProductId");
@@ -222,13 +225,13 @@ namespace entity_framework_test2.Migrations
                     b.HasData(
                         new
                         {
-                            ProductId = new Guid("35eeb65b-b9c4-4c44-a30f-d78cf5933726"),
+                            ProductId = new Guid("463e8e24-61bf-4342-a64b-51338455ca83"),
                             Name = "Product A",
                             UnitPrice = 2.50m
                         },
                         new
                         {
-                            ProductId = new Guid("c0abc7ec-4932-48ce-9697-76d0bac9ced8"),
+                            ProductId = new Guid("2e987de0-b832-4c8b-9da9-ceb01da2b4e1"),
                             Name = "Product B",
                             UnitPrice = 5.25m
                         });
