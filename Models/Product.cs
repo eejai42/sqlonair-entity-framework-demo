@@ -12,5 +12,9 @@ namespace entity_framework_test2.Models
         public decimal UnitPrice{ get; set; }
 
         public ICollection<CartItem> CartItems { get; set; }
+ 
+        // Calculated fields
+        public decimal CartTotal { get; set; }
+        public decimal CartQuantity { get; set; }
     }
 }

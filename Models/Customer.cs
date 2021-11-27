@@ -10,7 +10,13 @@ namespace entity_framework_test2.Models
         public Guid CustomerId { get;set; }
         public String Name { get; set; }
         public String PhoneNumber { get; set; }
+        public decimal TaxRate { get; set; }
+        public int PaymentTerm { get; set; }
 
         public ICollection<Cart> Carts { get; set; }
+ 
+        // Calculated Fields
+        public decimal CartTotal { get; set; }
+        public bool IsVIP { get; set; }
     }
 }
