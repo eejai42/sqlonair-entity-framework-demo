@@ -18,7 +18,7 @@ namespace entity_framework_test2.Models
         // Calculated Fields
 #if WITH_CALCULATED_FIELDS
         public string CustomerName { get; set; }
-        public string CustomerTaxRate { get; set; }
+        public decimal? CustomerTaxRate { get; set; }
         public string ProductName { get; set; }
         public decimal? UnitPrice { get; set; }
         public decimal? SubTotal { get; set; }
