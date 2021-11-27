@@ -131,10 +131,10 @@ namespace entity_framework_test2.Models
         {
             var decimals = new[]
             {
-                modelBuilder.Entity<CartItem>().Property(detail => detail.Quantity)
-                ,modelBuilder.Entity<Product>().Property(detail => detail.UnitPrice)
-                ,modelBuilder.Entity<Product>().Property(product => product.UnitPrice)
+                modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.Quantity)
                 ,modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.Quantity)
+                ,modelBuilder.Entity<Product>().Property(product => product.UnitPrice)
+                ,modelBuilder.Entity<Product>().Property(product => product.UnitPrice)
             };
 
             decimals.ToList().ForEach(property =>
@@ -145,24 +145,26 @@ namespace entity_framework_test2.Models
 
         private static void UpdateNullibleDecimals(ModelBuilder modelBuilder)
         {
+#if WITH_CALCULATED_FIELDS
             var nullibleDecimals = new[]
             {
-                modelBuilder.Entity<Cart>().Property(order => order.SubTotal)
-                ,modelBuilder.Entity<Cart>().Property(order => order.Tax)
-                ,modelBuilder.Entity<Cart>().Property(order => order.Total)
-                ,modelBuilder.Entity<CartItem>().Property(detail => detail.SubTotal)
-                ,modelBuilder.Entity<CartItem>().Property(detail => detail.Tax)
-                ,modelBuilder.Entity<CartItem>().Property(detail => detail.Total)
-                ,modelBuilder.Entity<CartItem>().Property(detail => detail.UnitPrice)
-                ,modelBuilder.Entity<Customer>().Property(detail => detail.CartTotal)
-                ,modelBuilder.Entity<Product>().Property(detail => detail.CartQuantity)
-                ,modelBuilder.Entity<Product>().Property(detail => detail.CartTotal)
-            };
+                modelBuilder.Entity<Cart>().Property(cart => cart.SubTotal)
+                ,modelBuilder.Entity<Cart>().Property(cart => cart.Tax)
+                ,modelBuilder.Entity<Cart>().Property(cart => cart.Total)
+                ,modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.SubTotal)
+                ,modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.Tax)
+                ,modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.Total)
+                ,modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.UnitPrice)
+                ,modelBuilder.Entity<Customer>().Property(customer => customer.CartTotal)
+                ,modelBuilder.Entity<Product>().Property(product => product.CartQuantity)
+                ,modelBuilder.Entity<Product>().Property(product => product.CartTotal)
+        };
 
             nullibleDecimals.ToList().ForEach(property =>
             {
                 property.HasPrecision(18, 2);
             });
+#endif
         }
 
         private static void UpdateTaxRateFields(ModelBuilder modelBuilder)
