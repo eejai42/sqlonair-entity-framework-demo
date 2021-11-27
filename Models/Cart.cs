@@ -24,5 +24,6 @@ namespace entity_framework_test2.Models
         public decimal Tax { get; set; }
         public decimal Total { get; set; }
         public DateTime DueDate { get; set; }
+        public Boolean IsDue { get; set; }
     }
 }
