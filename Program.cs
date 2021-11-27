@@ -1,3 +1,5 @@
+#define WITH_CALCULATED_FIELDS
+
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -9,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace entity_framework_test2
 {
+
     public class Program
     {
         public static void Main(string[] args)
