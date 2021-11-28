@@ -45,15 +45,15 @@ namespace entity_framework_test2.Models
                 ejsOrder, bobsOrder, marysOrder
             });
 
-            SeedItems(modelBuilder, productA, productB, ejsOrder, bobsOrder, marysOrder);
+            SeedLineItems(modelBuilder, productA, productB, ejsOrder, bobsOrder, marysOrder);
         }
 
-        private static void SeedItems(ModelBuilder modelBuilder, Product productA, Product productB, Order ejsCart, Order bobsCart, Order marysCart)
+        private static void SeedLineItems(ModelBuilder modelBuilder, Product productA, Product productB, Order ejsOrder, Order bobsOrder, Order marysOrder)
         {
-            var ejItem1 = new LineItem() { OrderId = ejsCart.OrderId, ProductId = productA.ProductId, Quantity = 1 };
-            var ejItem2 = new LineItem() { OrderId = ejsCart.OrderId, ProductId = productB.ProductId, Quantity = 25 };
-            var bobItem1 = new LineItem() { OrderId = bobsCart.OrderId, ProductId = productA.ProductId, Quantity = 125 };
-            var maryItem1 = new LineItem() { OrderId = marysCart.OrderId, ProductId = productB.ProductId, Quantity = 6 };
+            var ejItem1 = new LineItem() { OrderId = ejsOrder.OrderId, ProductId = productA.ProductId, Quantity = 1 };
+            var ejItem2 = new LineItem() { OrderId = ejsOrder.OrderId, ProductId = productB.ProductId, Quantity = 25 };
+            var bobItem1 = new LineItem() { OrderId = bobsOrder.OrderId, ProductId = productA.ProductId, Quantity = 125 };
+            var maryItem1 = new LineItem() { OrderId = marysOrder.OrderId, ProductId = productB.ProductId, Quantity = 6 };
 
             modelBuilder.Entity<LineItem>().HasData(new Models.LineItem[]
             {
@@ -133,8 +133,8 @@ namespace entity_framework_test2.Models
         {
             var decimals = new[]
             {
-                modelBuilder.Entity<LineItem>().Property(cartItem => cartItem.Quantity)
-                ,modelBuilder.Entity<LineItem>().Property(cartItem => cartItem.Quantity)
+                modelBuilder.Entity<LineItem>().Property(lineItem => lineItem.Quantity)
+                ,modelBuilder.Entity<LineItem>().Property(lineItem => lineItem.Quantity)
                 ,modelBuilder.Entity<Product>().Property(product => product.UnitPrice)
                 ,modelBuilder.Entity<Product>().Property(product => product.UnitPrice)
             };
@@ -150,13 +150,13 @@ namespace entity_framework_test2.Models
 #if WITH_CALCULATED_FIELDS
             var nullibleDecimals = new[]
             {
-                modelBuilder.Entity<Cart>().Property(cart => cart.SubTotal)
-                ,modelBuilder.Entity<Cart>().Property(cart => cart.Tax)
-                ,modelBuilder.Entity<Cart>().Property(cart => cart.Total)
-                ,modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.SubTotal)
-                ,modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.Tax)
-                ,modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.Total)
-                ,modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.UnitPrice)
+                modelBuilder.Entity<Order>().Property(order => order.SubTotal)
+                ,modelBuilder.Entity<Order>().Property(orer => orer.Tax)
+                ,modelBuilder.Entity<Order>().Property(order => order.Total)
+                ,modelBuilder.Entity<LineItem>().Property(lineItem => lineItem.SubTotal)
+                ,modelBuilder.Entity<LineItem>().Property(lineItem => lineItem.Tax)
+                ,modelBuilder.Entity<LineItem>().Property(lineItem => lineItem.Total)
+                ,modelBuilder.Entity<LineItem>().Property(lineItem => lineItem.UnitPrice)
                 ,modelBuilder.Entity<Customer>().Property(customer => customer.OrderTotal)
                 ,modelBuilder.Entity<Product>().Property(product => product.OrderQuantity)
                 ,modelBuilder.Entity<Product>().Property(product => product.OrderTotal)
@@ -176,8 +176,8 @@ namespace entity_framework_test2.Models
             modelBuilder.Entity<Customer>().Property(product => product.TaxRate)
 #if WITH_CALCULATED_FIELDS
             ,modelBuilder.Entity<Customer>().Property(detail => detail.TaxRate)
-            ,modelBuilder.Entity<Cart>().Property(order => order.CustomerTaxRate)
-            ,modelBuilder.Entity<CartItem>().Property(detail => detail.CustomerTaxRate)
+            ,modelBuilder.Entity<Order>().Property(order => order.CustomerTaxRate)
+            ,modelBuilder.Entity<LineItem>().Property(detail => detail.CustomerTaxRate)
 #endif
         };
 
