@@ -21,6 +21,7 @@ namespace entity_framework_test2.Models
         // Calculated Fields
 #if WITH_CALCULATED_FIELDS
         public decimal? CartTotal { get; set; }
+        public decimal? AmountDue { get; set; }
         public bool? IsVIP { get; set; }
 #endif
     }
