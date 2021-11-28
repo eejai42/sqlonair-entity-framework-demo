@@ -16,11 +16,11 @@ namespace entity_framework_test2.Models
         public Guid? PaymentArrangementId { get; set; }
         public PaymentArrangement PaymentArrangement { get; set; }
 
-        public ICollection<Cart> Carts { get; set; }
+        public ICollection<Order> Orders { get; set; }
 
         // Calculated Fields
 #if WITH_CALCULATED_FIELDS
-        public decimal? CartTotal { get; set; }
+        public decimal? OrderTotal { get; set; }
         public decimal? AmountDue { get; set; }
         public bool? IsVIP { get; set; }
 #endif

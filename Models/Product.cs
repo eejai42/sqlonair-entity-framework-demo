@@ -11,12 +11,12 @@ namespace entity_framework_test2.Models
         public String Name { get; set; }
         public decimal UnitPrice{ get; set; }
 
-        public ICollection<CartItem> CartItems { get; set; }
+        public ICollection<LineItem> LineItems { get; set; }
 
         // Calculated fields
 #if WITH_CALCULATED_FIELDS
-        public decimal? CartTotal { get; set; }
-        public decimal? CartQuantity { get; set; }
+        public decimal? OrderTotal { get; set; }
+        public decimal? OrderQuantity { get; set; }
 #endif
     }
 }

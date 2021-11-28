@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 
 namespace entity_framework_test2.Models
 {
-    public class CartItem
+    public class LineItem
     {
-        public Guid CartItemId { get; set; } = Guid.NewGuid();
+        public Guid LineItemId { get; set; } = Guid.NewGuid();
         public decimal Quantity { get; set; }
         public Guid ProductId { get; set; }
         public Product Product { get; set; }
 
-        public Guid CartId { get; set; }
-        public Cart Cart { get; set; }
+        public Guid OrderId { get; set; }
+        public Order Order { get; set; }
 
         // Calculated Fields
 #if WITH_CALCULATED_FIELDS

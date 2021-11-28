@@ -31,31 +31,31 @@ namespace entity_framework_test2.Models
 
             SeedCustomers(modelBuilder, net15, net30, out var ej, out var bob, out var mary);
 
-            SeedCarts(modelBuilder, productA, productB, ej, bob, mary);
+            SeedOrders(modelBuilder, productA, productB, ej, bob, mary);
         }
 
-        private static void SeedCarts(ModelBuilder modelBuilder, Product productA, Product productB, Customer ej, Customer bob, Customer mary)
+        private static void SeedOrders(ModelBuilder modelBuilder, Product productA, Product productB, Customer ej, Customer bob, Customer mary)
         {
-            var ejsCart = new Cart() { CustomerId = ej.CustomerId, CartNumber = 1000 };
-            var bobsCart = new Cart() { CustomerId = bob.CustomerId, CartNumber = 1001 };
-            var marysCart = new Cart() { CustomerId = mary.CustomerId, CartNumber = 1002 };
+            var ejsOrder = new Order() { CustomerId = ej.CustomerId, OrderNumber = 1000 };
+            var bobsOrder = new Order() { CustomerId = bob.CustomerId, OrderNumber = 1001 };
+            var marysOrder = new Order() { CustomerId = mary.CustomerId, OrderNumber = 1002 };
 
-            modelBuilder.Entity<Cart>().HasData(new Models.Cart[]
+            modelBuilder.Entity<Order>().HasData(new Models.Order[]
             {
-                ejsCart, bobsCart, marysCart
+                ejsOrder, bobsOrder, marysOrder
             });
 
-            SeedItems(modelBuilder, productA, productB, ejsCart, bobsCart, marysCart);
+            SeedItems(modelBuilder, productA, productB, ejsOrder, bobsOrder, marysOrder);
         }
 
-        private static void SeedItems(ModelBuilder modelBuilder, Product productA, Product productB, Cart ejsCart, Cart bobsCart, Cart marysCart)
+        private static void SeedItems(ModelBuilder modelBuilder, Product productA, Product productB, Order ejsCart, Order bobsCart, Order marysCart)
         {
-            var ejItem1 = new CartItem() { CartId = ejsCart.CartId, ProductId = productA.ProductId, Quantity = 1 };
-            var ejItem2 = new CartItem() { CartId = ejsCart.CartId, ProductId = productB.ProductId, Quantity = 25 };
-            var bobItem1 = new CartItem() { CartId = bobsCart.CartId, ProductId = productA.ProductId, Quantity = 125 };
-            var maryItem1 = new CartItem() { CartId = marysCart.CartId, ProductId = productB.ProductId, Quantity = 6 };
+            var ejItem1 = new LineItem() { OrderId = ejsCart.OrderId, ProductId = productA.ProductId, Quantity = 1 };
+            var ejItem2 = new LineItem() { OrderId = ejsCart.OrderId, ProductId = productB.ProductId, Quantity = 25 };
+            var bobItem1 = new LineItem() { OrderId = bobsCart.OrderId, ProductId = productA.ProductId, Quantity = 125 };
+            var maryItem1 = new LineItem() { OrderId = marysCart.OrderId, ProductId = productB.ProductId, Quantity = 6 };
 
-            modelBuilder.Entity<CartItem>().HasData(new Models.CartItem[]
+            modelBuilder.Entity<LineItem>().HasData(new Models.LineItem[]
             {
                 ejItem1, ejItem2, bobItem1, maryItem1
             });
@@ -133,8 +133,8 @@ namespace entity_framework_test2.Models
         {
             var decimals = new[]
             {
-                modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.Quantity)
-                ,modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.Quantity)
+                modelBuilder.Entity<LineItem>().Property(cartItem => cartItem.Quantity)
+                ,modelBuilder.Entity<LineItem>().Property(cartItem => cartItem.Quantity)
                 ,modelBuilder.Entity<Product>().Property(product => product.UnitPrice)
                 ,modelBuilder.Entity<Product>().Property(product => product.UnitPrice)
             };
@@ -157,9 +157,9 @@ namespace entity_framework_test2.Models
                 ,modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.Tax)
                 ,modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.Total)
                 ,modelBuilder.Entity<CartItem>().Property(cartItem => cartItem.UnitPrice)
-                ,modelBuilder.Entity<Customer>().Property(customer => customer.CartTotal)
-                ,modelBuilder.Entity<Product>().Property(product => product.CartQuantity)
-                ,modelBuilder.Entity<Product>().Property(product => product.CartTotal)
+                ,modelBuilder.Entity<Customer>().Property(customer => customer.OrderTotal)
+                ,modelBuilder.Entity<Product>().Property(product => product.OrderQuantity)
+                ,modelBuilder.Entity<Product>().Property(product => product.OrderTotal)
         };
 
             nullibleDecimals.ToList().ForEach(property =>
@@ -187,8 +187,8 @@ namespace entity_framework_test2.Models
             });
         }
 
-        public DbSet<Cart> Cart { get; set; } = null!;
-        public DbSet<CartItem> CartItem { get; set; } = null!;
+        public DbSet<Order> Order { get; set; } = null!;
+        public DbSet<LineItem> LineItem { get; set; } = null!;
         public DbSet<Product> Product { get; set; } = null!;
         public DbSet<PaymentArrangement> PaymentArrangement { get; set; } = null!;
         public DbSet<Customer> Customer { get; set; } = null!;
