@@ -115,11 +115,13 @@ namespace entity_framework_test2.Models
         {
             net15 = new PaymentArrangement()
             {
-                Term = 15
+                Term = 15,
+                TermName = "NET 15"
             };
             net30 = new PaymentArrangement()
             {
-                Term = 30
+                Term = 30,
+                TermName = "NET 30"
             };
             modelBuilder.Entity<PaymentArrangement>().HasData(new Models.PaymentArrangement[]
             {

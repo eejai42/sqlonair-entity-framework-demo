@@ -22,7 +22,6 @@ namespace entity_framework_test2.Models
 #if WITH_CALCULATED_FIELDS
         public decimal? CartTotal { get; set; }
         public bool? IsVIP { get; set; }
-        public int? PaymentArrangementTerm { get; set; }
 #endif
     }
 }
