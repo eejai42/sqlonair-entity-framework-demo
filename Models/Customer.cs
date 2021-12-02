@@ -18,8 +18,8 @@ namespace entity_framework_test2.Models
 
         public ICollection<Order> Orders { get; set; }
 
-        // Calculated Fields
 #if WITH_CALCULATED_FIELDS
+        // Calculated Fields
         public decimal? OrderTotal { get; set; }
         public decimal? PastDueAmount { get; set; }
         public bool? IsVIP { get; set; }

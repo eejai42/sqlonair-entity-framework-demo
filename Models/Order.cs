@@ -15,8 +15,8 @@ namespace entity_framework_test2.Models
 
         public ICollection<LineItem> LineItems { get; set; }
 
-        // Calculated Fields
 #if WITH_CALCULATED_FIELDS
+        // Calculated Fields
         public string CustomerName { get; set; }
         public int? CustomerPaymentTerm { get; set; }
         public string CustomerPhoneNumber { get; set; }

@@ -15,8 +15,8 @@ namespace entity_framework_test2.Models
         public Guid OrderId { get; set; }
         public Order Order { get; set; }
 
-        // Calculated Fields
 #if WITH_CALCULATED_FIELDS
+        // Calculated Fields
         public string CustomerName { get; set; }
         public string ProductName { get; set; }
         public decimal? UnitPrice { get; set; }

@@ -13,8 +13,8 @@ namespace entity_framework_test2.Models
 
         public ICollection<LineItem> LineItems { get; set; }
 
-        // Calculated fields
 #if WITH_CALCULATED_FIELDS
+        // Calculated fields
         public decimal? OrderTotal { get; set; }
         public decimal? OrderQuantity { get; set; }
 #endif
