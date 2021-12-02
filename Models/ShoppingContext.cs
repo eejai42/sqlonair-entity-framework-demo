@@ -176,7 +176,6 @@ namespace entity_framework_test2.Models
             modelBuilder.Entity<Customer>().Property(product => product.TaxRate)
 #if WITH_CALCULATED_FIELDS
             ,modelBuilder.Entity<Customer>().Property(detail => detail.TaxRate)
-            ,modelBuilder.Entity<Order>().Property(order => order.CustomerTaxRate)
             ,modelBuilder.Entity<LineItem>().Property(detail => detail.CustomerTaxRate)
 #endif
         };
