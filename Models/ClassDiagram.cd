@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
   <Class Name="entity_framework_test2.Models.Customer">
-    <Position X="3.5" Y="3.25" Width="2.5" />
+    <Position X="3.5" Y="4.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AEEAAAAAAAAABACAAAAAQAQAAAAAABAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AEEAgAAAAAAIBACAAAAAQAwAAAAAABAAAAAAAAAAAAg=</HashCode>
       <FileName>Models\Customer.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -13,7 +13,7 @@
   <Class Name="entity_framework_test2.Models.LineItem">
     <Position X="0.75" Y="0.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>EAECAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <HashCode>MAECAAQAAAAgCAAQAAAAAAAAQAAAQAAAAAAAgAAIAAA=</HashCode>
       <FileName>Models\LineItem.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -23,8 +23,13 @@
   </Class>
   <Class Name="entity_framework_test2.Models.Order">
     <Position X="3.5" Y="0.5" Width="2.5" />
+    <AssociationLine Name="Customer" Type="entity_framework_test2.Models.Customer">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.06" Y="0.11" Height="0.182" Width="0.864" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>GAEAAAIAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <HashCode>GAEAAAYAIAAgACAQAAACAAAAQAIAQBAAIAAAAAAAAAA=</HashCode>
       <FileName>Models\Order.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -39,14 +44,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="entity_framework_test2.Models.Product">
-    <Position X="0.5" Y="3.5" Width="1.75" />
+    <Position X="1" Y="4.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>MAAAAAAAAAAAAAAAAAACAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>MAAAgAAAAAAAAAABAAACAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Product.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="entity_framework_test2.Models.ShoppingContext" Collapsed="true">
-    <Position X="0.75" Y="6.5" Width="9.25" />
+    <Position X="1" Y="7.75" Width="9.25" />
     <TypeIdentifier>
       <HashCode>IEGCAAAAAAIAAAAAAAACRABAEAAAAAAAAAIAAAAEAAA=</HashCode>
       <FileName>Models\ShoppingContext.cs</FileName>
