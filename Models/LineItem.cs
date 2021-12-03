@@ -19,6 +19,7 @@ namespace entity_framework_test2.Models
         // Calculated Fields
         public string CustomerName { get; set; }
         public string ProductName { get; set; }
+        public string CustomerTaxRateDisplay { get; set; }
         public decimal? UnitPrice { get; set; }
         public decimal? SubTotal { get; set; }
         public decimal? CustomerTaxRate { get; set; }

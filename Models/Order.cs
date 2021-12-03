@@ -20,6 +20,7 @@ namespace entity_framework_test2.Models
         public string CustomerName { get; set; }
         public int? CustomerPaymentTerm { get; set; }
         public string CustomerPhoneNumber { get; set; }
+        public string CustomerTaxRateDisplay { get; set; }
         public decimal? CustomerTaxRate { get; set; }
         public decimal? SubTotal { get; set; }
         public decimal? Tax { get; set; }

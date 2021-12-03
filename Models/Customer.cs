@@ -20,6 +20,7 @@ namespace entity_framework_test2.Models
 
 #if WITH_CALCULATED_FIELDS
         // Calculated Fields
+        public string TaxRateDisplay { get; set; }
         public decimal? OrderTotal { get; set; }
         public decimal? PastDueAmount { get; set; }
         public bool? IsVIP { get; set; }
