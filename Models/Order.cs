@@ -11,7 +11,7 @@ namespace entity_framework_test2.Models
         public Guid CustomerId { get; set; }
         public Customer Customer { get; set; }
         public DateTime OrderDate { get; set; } = DateTime.UtcNow;
-        public int OrderNumber { get; set; }
+        public int? OrderNumber { get; set; }
 
         public ICollection<LineItem> LineItems { get; set; }
 
