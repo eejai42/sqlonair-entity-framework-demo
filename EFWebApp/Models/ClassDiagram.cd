@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
   <Class Name="entity_framework_test2.Models.Customer">
-    <Position X="3.5" Y="4.25" Width="2.5" />
+    <Position X="4.25" Y="4.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AEEAgAAAAAAIBACAAAAAQAwAAAAAABAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AEEAgAAAAAAIBACAAAAAQAwAABAAABAAAAAAAAAAAAg=</HashCode>
       <FileName>Models\Customer.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -13,7 +13,7 @@
   <Class Name="entity_framework_test2.Models.LineItem">
     <Position X="0.75" Y="0.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>MAECAAQAAAAgCAAQAAAAAAAAQAAAQAAAAAAAgAAIAAA=</HashCode>
+      <HashCode>MAECAAQAAAAgCAAQAAAAAAAAQAAAQAAAAEAAgAAIAAA=</HashCode>
       <FileName>Models\LineItem.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -22,14 +22,14 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="entity_framework_test2.Models.Order">
-    <Position X="3.5" Y="0.5" Width="2.5" />
+    <Position X="3.75" Y="0.5" Width="2.5" />
     <AssociationLine Name="Customer" Type="entity_framework_test2.Models.Customer">
       <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
-        <Position X="0.06" Y="0.11" Height="0.182" Width="0.864" />
+        <Position X="0.11" Y="0.06" Height="0.182" Width="0.864" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>GAEAAAYAIAAgACAQAAACAAAAQAIAQBAAIAAAAAAAAAA=</HashCode>
+      <HashCode>GAEAAAYAIAAgACAQAAACAAAAQAIAQBAAIEAAAAAAAAA=</HashCode>
       <FileName>Models\Order.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

@@ -1,4 +1,4 @@
-/obj/**/*
-/bin/**/*
-/.vs/**/*
-/entity-framework-test2.csproj.user
+**/obj/**/*
+**/bin/**/*
+**/.vs/**/*
+**/entity-framework-test2.csproj.user

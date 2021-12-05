@@ -158,6 +158,7 @@ namespace entity_framework_test2.Models
                 ,modelBuilder.Entity<LineItem>().Property(lineItem => lineItem.Total)
                 ,modelBuilder.Entity<LineItem>().Property(lineItem => lineItem.UnitPrice)
                 ,modelBuilder.Entity<Customer>().Property(customer => customer.OrderTotal)
+                ,modelBuilder.Entity<Customer>().Property(customer => customer.PastDueAmount)
                 ,modelBuilder.Entity<Product>().Property(product => product.OrderQuantity)
                 ,modelBuilder.Entity<Product>().Property(product => product.OrderTotal)
         };
