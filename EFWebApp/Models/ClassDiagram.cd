@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
   <Class Name="entity_framework_test2.Models.Customer">
-    <Position X="4.25" Y="4.75" Width="2.5" />
+    <Position X="7" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AEEAgAAAAAAIBACAAAAAQAwAABAAABAAAAAAAAAAAAg=</HashCode>
       <FileName>Models\Customer.cs</FileName>
@@ -22,10 +22,10 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="entity_framework_test2.Models.Order">
-    <Position X="3.75" Y="0.5" Width="2.5" />
+    <Position X="3.5" Y="0.5" Width="2.5" />
     <AssociationLine Name="Customer" Type="entity_framework_test2.Models.Customer">
       <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
-        <Position X="0.11" Y="0.06" Height="0.182" Width="0.864" />
+        <Position X="0.06" Y="0.11" Height="0.182" Width="0.864" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
@@ -37,7 +37,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="entity_framework_test2.Models.PaymentArrangement">
-    <Position X="8" Y="4" Width="2.5" />
+    <Position X="6.75" Y="4.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAEAAAAAAAAAg=</HashCode>
       <FileName>Models\PaymentArrangement.cs</FileName>
@@ -51,7 +51,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="entity_framework_test2.Models.ShoppingContext" Collapsed="true">
-    <Position X="1" Y="7.75" Width="9.25" />
+    <Position X="1" Y="8" Width="9.25" />
     <TypeIdentifier>
       <HashCode>IEGCAAAAAAIAAAAAAAACRABAEAAAAAAAAAIAAAAEAAA=</HashCode>
       <FileName>Models\ShoppingContext.cs</FileName>

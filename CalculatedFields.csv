@@ -26,3 +26,5 @@
 "Customer","TaxRateDisplay","Calculation","","","","","format(TaxRate, 'p2')","","string","150","","0"
 "Order","CustomerTaxRateDisplay","Lookup","","Customer","TaxRateDisplay","CustomerId","","","string","150","","0"
 "LineItem","CustomerTaxRateDisplay","Lookup","","Order","CustomerTaxRateDisplay","OrderId","","","string","150","","0"
+"Customer","LastOrderDueDate","Aggregate","","Order","OrderDate","CustomerId","max(values)","","dateTime","150","","0"
+"Customer","LastOrderDate","Aggregate","","Order","DueDate","CustomerId","max(values)","","dateTime","150","","0"
