@@ -5,7 +5,7 @@
 "Customer","LastOrderDueDate","Aggregate","","Order","DueDate","CustomerId","max(values)","","datetime","","","0"
 "Customer","OrderTotal","Aggregate","","Order","Total","CustomerId","sum(values)","","decimal","18","2","0"
 "Customer","PastDueAmount","Aggregate","","Order","Total","CustomerId","sum(values)","IsPastDue=1","decimal","18","2","0"
-"Customer","IsVIP","Calculation","","","","","IIF((OrderTotal > 100) AND (PastDueAmount = 0),1,0)","","boolean","","","0"
+"Customer","IsVIP","Calculation","","","","","IIF((OrderTotal > 100) AND (coalesce(PastDueAmount,0) = 0),1,0)","","boolean","","","0"
 "LineItem","CustomerName","Lookup","","Order","CustomerName","OrderId","","","string","150","","0"
 "LineItem","ProductName","Lookup","","Product","Name","ProductId","","","string","150","","0"
 "LineItem","CustomerTaxRateDisplay","Lookup","","Order","CustomerTaxRateDisplay","OrderId","","","string","150","","0"

@@ -37,7 +37,7 @@ namespace entity_framework_test2.Models
         [SQLonAirAggregation(typeof(Order), "Total", "CustomerId", "sum(values)", "IsPastDue=1")]
         public decimal? PastDueAmount { get; set; }
 
-        [SQLonAirCalculation("IIF((OrderTotal > 100) AND (PastDueAmount = 0),1,0)")]
+        [SQLonAirCalculation("IIF((OrderTotal > 100) AND (coalesce(PastDueAmount,0) = 0),1,0)")]
         public bool? IsVIP { get; set; }
 #endif
     }

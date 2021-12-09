@@ -21,9 +21,7 @@ namespace entity_framework_test2
         public Startup(IConfiguration configuration)
         {
 #if DEBUG
-#if WITH_CALCULATED_FIELDS
             SQLonAirManager.SaveCSV("../CalculatedFields.csv", Assembly.GetExecutingAssembly());
-#endif
 #endif
             Configuration = configuration;
         }
