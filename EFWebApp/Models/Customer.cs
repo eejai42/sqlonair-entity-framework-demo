@@ -12,6 +12,8 @@ namespace entity_framework_test2.Models
         public String Name { get; set; }
         public String PhoneNumber { get; set; }
         public decimal? TaxRate { get; set; }
+
+        [SQLonAirLookup("PaymentArrangement", "Term", "PaymentArrangementId")] 
         public int? PaymentTerm { get; set; }
 
         public Guid? PaymentArrangementId { get; set; }

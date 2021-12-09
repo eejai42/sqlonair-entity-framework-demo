@@ -1,4 +1,5 @@
 "TableName","FieldName","FieldType","Description","RemoteTableName","RemoteFieldName","LocalJoinFieldName","Calculation","Where","DataType","Length","Precision","WriteOnce"
+"Customer","PaymentTerm","Lookup","","PaymentArrangement","Term","PaymentArrangementId","","","int32","","","0"
 "Customer","TaxRateDisplay","Calculation","","","","","FORMAT(TaxRate, 'P2')","","string","150","","0"
 "Customer","LastOrderDate","Aggregate","","Order","OrderDate","CustomerId","max(values)","","datetime","","","0"
 "Customer","LastOrderDueDate","Aggregate","","Order","DueDate","CustomerId","max(values)","","datetime","","","0"
@@ -23,5 +24,6 @@
 "Order","Total","Calculation","","","","","SubTotal + Tax","","decimal","18","2","0"
 "Order","DueDate","Calculation","","","","","DATEADD(DAY, CustomerPaymentTerm, OrderDate)","","datetime","","","0"
 "Order","IsPastDue","Calculation","","","","","IIF(getdate() > DueDate, 1, 0)","","boolean","","","0"
+"PaymentArrangement","TermName","Calculation","","","","","concat('NET ', Term)","","string","150","","0"
 "Product","OrderTotal","Aggregate","","LineItem","Total","ProductId","sum(values)","","decimal","18","2","0"
 "Product","OrderQuantity","Aggregate","","LineItem","Quantity","ProductId","sum(values)","","decimal","18","2","0"
