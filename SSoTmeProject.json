@@ -1,0 +1,17 @@
+{
+  "ShowHidden": false,
+  "ShowAllFiles": false,
+  "SaveDisabled": false,
+  "SSoTmeProjectId": "299994fa-de15-45c5-b353-264ac02c9341",
+  "Name": "SQLonAir-entity-framework-demo",
+  "ProjectSettings": [
+    {
+      "ProjectSettingId": "35273a34-0a81-448e-9a54-deab9a341b43",
+      "Name": "project-name",
+      "Value": "SQLonAir-entity-framework-demo"
+    }
+  ],
+  "ProjectTranspilers": [
+
+  ]
+}

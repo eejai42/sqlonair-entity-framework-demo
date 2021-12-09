@@ -1,5 +1,5 @@
 **/obj/**/*
 **/bin/**/*
 **/.vs/**/*
-**/entity-framework-test2.csproj.user
-/EFWebApp/entity-framework-demo.csproj.user
+**/*.csproj.user
+/.ssotme/**/*

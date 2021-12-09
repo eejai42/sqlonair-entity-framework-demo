@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace entity_framework_test2
@@ -19,6 +20,11 @@ namespace entity_framework_test2
     {
         public Startup(IConfiguration configuration)
         {
+#if DEBUG
+#if WITH_CALCULATED_FIELDS
+            SQLonAirManager.SaveCSV("../CalculatedFields.csv", Assembly.GetExecutingAssembly());
+#endif
+#endif
             Configuration = configuration;
         }
 

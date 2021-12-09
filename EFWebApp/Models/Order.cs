@@ -35,13 +35,13 @@ namespace entity_framework_test2.Models
         [SQLonAirAggregation("LineItem", "SubTotal", "OrderId")]
         public decimal? SubTotal { get; set; }
 
-        [SQLonAirCalculation("SubTotal * TaxRate")]
+        [SQLonAirAggregation("LineItem", "Tax", "OrderId")]
         public decimal? Tax { get; set; }
 
         [SQLonAirCalculation("SubTotal + Tax")]
         public decimal? Total { get; set; }
         
-        [SQLonAirCalculation("DATE_ADD(DAY, DueDate, CustomerPaymentTerm)")]
+        [SQLonAirCalculation("DATEADD(DAY, CustomerPaymentTerm, OrderDate)")]
         public DateTime? DueDate { get; set; }
 
         [SQLonAirCalculation("IIF(getdate() > DueDate, 1, 0)")]
