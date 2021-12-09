@@ -21,6 +21,8 @@ The demo starts with just the basic, normalized model for Customers, Products, O
    `./EFWebApp> dotnet ef migrations add v2`
 6. Update the database with the new fields
    `./EFWebApp> dotnet ef database update`
+7. Press F5 to run the project.  This will update the CalculatedFields.csv file based on the 
+    SQLonAir attributes defined along with the Calculated Fields in the class files.
 7. Use the SQL on Air Desktop Client to import the `/CalculatedFields.csv` file, and build the 
 	SOA project in order to populate the DB with the triggers and stored procedures.	
 8. Explore the new, DB with SQL on Air Desktop Client.
