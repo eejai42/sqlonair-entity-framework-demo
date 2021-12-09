@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLonAirCore.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,7 +16,10 @@ namespace entity_framework_test2.Models
 
 #if WITH_CALCULATED_FIELDS
         // Calculated fields
+        [SQLonAirAggregation("LineItem", "Total", "ProductId")]
         public decimal? OrderTotal { get; set; }
+
+        [SQLonAirAggregation("LineItem", "Quantity", "ProductId")]
         public decimal? OrderQuantity { get; set; }
 #endif
     }
