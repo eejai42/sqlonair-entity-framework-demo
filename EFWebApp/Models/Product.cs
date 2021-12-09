@@ -15,10 +15,10 @@ namespace entity_framework_test2.Models
         public ICollection<LineItem> LineItems { get; set; }
 
 #if WITH_CALCULATED_FIELDS
-        [SQLonAirAggregation("LineItem", "Total", "ProductId")]
+        [SQLonAirAggregation(typeof(LineItem), "Total", "ProductId")]
         public decimal? OrderTotal { get; set; }
 
-        [SQLonAirAggregation("LineItem", "Quantity", "ProductId")]
+        [SQLonAirAggregation(typeof(LineItem), "Quantity", "ProductId")]
         public decimal? OrderQuantity { get; set; }
 #endif
     }

@@ -17,25 +17,25 @@ namespace entity_framework_test2.Models
         public ICollection<LineItem> LineItems { get; set; }
 
 #if WITH_CALCULATED_FIELDS
-        [SQLonAirLookup("Customer", "Name", "CustomerId")]
+        [SQLonAirLookup(typeof(Customer), "Name", "CustomerId")]
         public string CustomerName { get; set; }
 
-        [SQLonAirLookup("Customer", "PaymentTerm", "CustomerId")]
+        [SQLonAirLookup(typeof(Customer), "PaymentTerm", "CustomerId")]
         public int? CustomerPaymentTerm { get; set; }
         
-        [SQLonAirLookup("Customer", "PhoneNumber", "CustomerId")]
+        [SQLonAirLookup(typeof(Customer), "PhoneNumber", "CustomerId")]
         public string CustomerPhoneNumber { get; set; }
 
-        [SQLonAirLookup("Customer", "TaxRateDisplay", "CustomerId")]
+        [SQLonAirLookup(typeof(Customer), "TaxRateDisplay", "CustomerId")]
         public string CustomerTaxRateDisplay { get; set; }
 
-        [SQLonAirLookup("Customer", "TaxRate", "CustomerId", Precision=4)]
+        [SQLonAirLookup(typeof(Customer), "TaxRate", "CustomerId", Precision=4)]
         public decimal? CustomerTaxRate { get; set; }
 
-        [SQLonAirAggregation("LineItem", "SubTotal", "OrderId")]
+        [SQLonAirAggregation(typeof(LineItem), "SubTotal", "OrderId")]
         public decimal? SubTotal { get; set; }
 
-        [SQLonAirAggregation("LineItem", "Tax", "OrderId")]
+        [SQLonAirAggregation(typeof(LineItem), "Tax", "OrderId")]
         public decimal? Tax { get; set; }
 
         [SQLonAirCalculation("SubTotal + Tax")]

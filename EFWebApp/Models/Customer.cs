@@ -25,16 +25,16 @@ namespace entity_framework_test2.Models
         [SQLonAirCalculation("FORMAT(TaxRate, 'P2')")]
         public string TaxRateDisplay { get; set; }
 
-        [SQLonAirAggregation("Order", "OrderDate", "CustomerId", Calculation = "max(values)" )]
+        [SQLonAirAggregation(typeof(Order), "OrderDate", "CustomerId", Calculation = "max(values)" )]
         public DateTime? LastOrderDate { get; set; }
 
-        [SQLonAirAggregation("Order", "DueDate", "CustomerId", Calculation = "max(values)")]
+        [SQLonAirAggregation(typeof(Order), "DueDate", "CustomerId", Calculation = "max(values)")]
         public DateTime? LastOrderDueDate { get; set; }
 
-        [SQLonAirAggregation("Order", "Total", "CustomerId", Calculation = "sum(values)")]
+        [SQLonAirAggregation(typeof(Order), "Total", "CustomerId", Calculation = "sum(values)")]
         public decimal? OrderTotal { get; set; }
 
-        [SQLonAirAggregation("Order", "Total", "CustomerId", "sum(values)", "IsPastDue=1")]
+        [SQLonAirAggregation(typeof(Order), "Total", "CustomerId", "sum(values)", "IsPastDue=1")]
         public decimal? PastDueAmount { get; set; }
 
         [SQLonAirCalculation("IIF((OrderTotal > 100) AND (PastDueAmount = 0),1,0)")]
