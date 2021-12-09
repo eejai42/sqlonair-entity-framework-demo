@@ -13,7 +13,7 @@ namespace entity_framework_test2.Models
         public String PhoneNumber { get; set; }
         public decimal? TaxRate { get; set; }
 
-        [SQLonAirLookup("PaymentArrangement", "Term", "PaymentArrangementId")] 
+        [SQLonAirLookup(typeof(PaymentArrangement), "Term", "PaymentArrangementId")] 
         public int? PaymentTerm { get; set; }
 
         public Guid? PaymentArrangementId { get; set; }
