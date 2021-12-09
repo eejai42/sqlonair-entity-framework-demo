@@ -20,7 +20,6 @@ namespace entity_framework_test2.Models
         public ICollection<Order> Orders { get; set; }
 
 #if WITH_CALCULATED_FIELDS
-        // Calculated Fields
         [SQLonAirCalculation("FORMAT(TaxRate, 'P2')")]
         public string TaxRateDisplay { get; set; }
 

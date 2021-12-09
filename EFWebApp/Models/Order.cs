@@ -17,7 +17,6 @@ namespace entity_framework_test2.Models
         public ICollection<LineItem> LineItems { get; set; }
 
 #if WITH_CALCULATED_FIELDS
-        // Calculated Fields
         [SQLonAirLookup("Customer", "Name", "CustomerId")]
         public string CustomerName { get; set; }
 

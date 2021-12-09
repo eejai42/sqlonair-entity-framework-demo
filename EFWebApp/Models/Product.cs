@@ -15,7 +15,6 @@ namespace entity_framework_test2.Models
         public ICollection<LineItem> LineItems { get; set; }
 
 #if WITH_CALCULATED_FIELDS
-        // Calculated fields
         [SQLonAirAggregation("LineItem", "Total", "ProductId")]
         public decimal? OrderTotal { get; set; }
 

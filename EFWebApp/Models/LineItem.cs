@@ -17,7 +17,6 @@ namespace entity_framework_test2.Models
         public Order Order { get; set; }
 
 #if WITH_CALCULATED_FIELDS
-        // Calculated Fields
         [SQLonAirLookup("Order", "CustomerName", "OrderId")]
         public string CustomerName { get; set; }
 
