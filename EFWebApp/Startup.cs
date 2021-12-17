@@ -20,9 +20,6 @@ namespace entity_framework_test2
     {
         public Startup(IConfiguration configuration)
         {
-#if DEBUG
-            SQLonAirManager.SaveCSV("../CalculatedFields.csv", Assembly.GetExecutingAssembly());
-#endif
             Configuration = configuration;
         }
 
@@ -31,12 +28,23 @@ namespace entity_framework_test2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connStr = this.Configuration.GetConnectionString("acmedb2");
             services.AddControllers();
             services.AddSwaggerGen();
             services.AddDbContext<ShoppingContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("acmedb2"));
+                options.UseSqlServer(connStr);
             });
+            this.ConfigureSQLonAir(connStr);
+        }
+
+        private void ConfigureSQLonAir(string connStr)
+        {
+#if DEBUG
+            var csvFileName = "../CalculatedFields.csv";
+            MyManager.SaveCSV(csvFileName, Assembly.GetExecutingAssembly());
+            MyManager.BuildSQLonAir(csvFileName, connStr);
+#endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

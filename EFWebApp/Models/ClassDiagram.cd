@@ -3,7 +3,7 @@
   <Class Name="entity_framework_test2.Models.Customer">
     <Position X="7" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AEEAgAAAAAAIBACAAAAAQAwAABAAABAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AEEAAAAAAAAABACAAAAAQAQAAAAAABAAAAAAAAAAAAg=</HashCode>
       <FileName>Models\Customer.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -29,7 +29,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>GAEAAAYAIAAgACAQAAACAAAAQAIAQBAAIEAAAAAAAAA=</HashCode>
+      <HashCode>GAEAAAIAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Order.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -37,7 +37,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="entity_framework_test2.Models.PaymentArrangement">
-    <Position X="6.75" Y="4.25" Width="2.5" />
+    <Position X="7" Y="4.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAEAAAAAAAAAg=</HashCode>
       <FileName>Models\PaymentArrangement.cs</FileName>
