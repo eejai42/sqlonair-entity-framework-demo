@@ -36,9 +36,9 @@ namespace entity_framework_test2.Models
 
         private static void SeedOrders(ModelBuilder modelBuilder, Product productA, Product productB, Customer ej, Customer bob, Customer mary)
         {
-            var ejsOrder = new Order() { CustomerId = ej.CustomerId, OrderNumber = 1000 };
-            var bobsOrder = new Order() { CustomerId = bob.CustomerId, OrderNumber = 1001 };
-            var marysOrder = new Order() { CustomerId = mary.CustomerId, OrderNumber = 1002 };
+            var ejsOrder = new Order() { CustomerId = ej.CustomerId, OrderNumber = 1000, OrderDate = DateTime.Now.AddDays(-18) };
+            var bobsOrder = new Order() { CustomerId = bob.CustomerId, OrderNumber = 1001, OrderDate = DateTime.Now.AddDays(-4) };
+            var marysOrder = new Order() { CustomerId = mary.CustomerId, OrderNumber = 1002, OrderDate = DateTime.Now.AddDays(-10) };
 
             modelBuilder.Entity<Order>().HasData(new Models.Order[]
             {
@@ -123,9 +123,14 @@ namespace entity_framework_test2.Models
                 Term = 30,
                 TermName = "NET 30"
             };
+            var net7 = new PaymentArrangement()
+            {
+                Term = 7,
+                TermName = "TERM 7"
+            };
             modelBuilder.Entity<PaymentArrangement>().HasData(new Models.PaymentArrangement[]
             {
-                net15, net30
+                net7, net15, net30
             });
         }
 
