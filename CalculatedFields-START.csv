@@ -1,0 +1,3 @@
+"TableName","FieldName","FieldType","Description","RemoteTableName","RemoteFieldName","LocalJoinFieldName","Calculation","Where","DataType","Length","Precision","WriteOnce"
+"Customer","PaymentTerm","Lookup","The payment arrangement that governs this customer's payment terms.","PaymentArrangement","Term","PaymentArrangementId","","","int32","","","0"
+"PaymentArrangement","TermName","Calculation","A human readable description of the Payment Terms - e.g. NET 10","","","","concat('NET ', Term)","","string","150","","0"
